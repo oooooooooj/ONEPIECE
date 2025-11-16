@@ -1,4 +1,2 @@
-ONEPIECE
-来财
-===
+# ONEPIECE
 
