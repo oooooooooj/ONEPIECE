@@ -1,0 +1,154 @@
+/* Google Fonts - 核心视觉规范字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lato:wght@400;700&display=swap');
+
+/* Animate.css - 动画库 */
+@import 'animate.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 暗色模式基础样式 */
+@layer base {
+  :root {
+    --color-background: 249 250 251; /* #F9FAFB - 浅灰背景 */
+    --color-foreground: 17 24 39; /* 深色文字 */
+  }
+
+  .dark {
+    --color-background: 17 24 39; /* 暗色背景 */
+    --color-foreground: 249 250 251; /* 浅色文字 */
+  }
+
+  html {
+    font-family: 'Lato', sans-serif; /* 正文字体 */
+  }
+
+  body {
+    @apply bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-200;
+    font-family: 'Lato', sans-serif; /* 正文字体 */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif; /* 标题字体 */
+    font-weight: 600;
+  }
+}
+
+/* 自定义组件样式 - 核心视觉规范 */
+@layer components {
+  /* 按钮样式 - 圆角8px，悬停阴影 */
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-button font-medium transition-all duration-200;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-primary:hover {
+    @apply bg-primary-600;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary text-white rounded-button font-medium transition-all duration-200;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-secondary:hover {
+    @apply bg-secondary-600;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .btn-outline {
+    @apply px-4 py-2 bg-transparent border-2 border-primary text-primary rounded-button font-medium transition-all duration-200;
+  }
+
+  .btn-outline:hover {
+    @apply bg-primary text-white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* 卡片样式 - 使用16px基准网格 */
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700;
+  }
+
+  /* 容器样式 - 使用16px基准网格 */
+  .container-custom {
+    @apply container mx-auto px-4;
+  }
+
+  /* 间距工具类 - 16px基准网格（4px倍数） */
+  .spacing-xs { @apply p-1; } /* 4px */
+  .spacing-sm { @apply p-2; } /* 8px */
+  .spacing-md { @apply p-4; } /* 16px */
+  .spacing-lg { @apply p-6; } /* 24px */
+  .spacing-xl { @apply p-8; } /* 32px */
+  .spacing-2xl { @apply p-12; } /* 48px */
+}
+
+/* 工具类 */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* 字体工具类 */
+  .font-heading {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Lato', sans-serif;
+  }
+
+  /* 淡入动画 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .animate-fade-in-delay {
+    animation: fadeIn 1s ease-out 0.3s both;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 1s ease-out 0.6s both;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeIn 0.8s ease-out both;
+  }
+
+  /* 修复重叠和重影问题 */
+  .card {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* 确保文字清晰可读 */
+  .text-shadow-strong {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* 防止内容溢出 */
+  .overflow-safe {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+

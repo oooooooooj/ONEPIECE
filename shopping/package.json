@@ -1,0 +1,35 @@
+{
+  "name": "shopping",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "3.8.0",
+    "@nuxt/icon": "^1.0.0",
+    "@nuxt/image": "2.0.0",
+    "@nuxtjs/i18n": "^8",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@unhead/vue": "^1.9.0",
+    "animate.css": "^4.1.1",
+    "better-sqlite3": "^12.4.1",
+    "nuxt": "^3.20.1",
+    "typescript": "^5.6.3",
+    "unhead": "^1.9.0",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.2.3",
+    "@nuxtjs/color-mode": "^4.0.0",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.0"
+  }
+}
